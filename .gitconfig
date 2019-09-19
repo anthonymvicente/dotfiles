@@ -1,0 +1,15 @@
+[user]
+    name = Anthony Vicente
+    email = anthony@mvicente.com
+
+[alias]
+    hist = log --pretty=format:'%h %ad | %s%d [%an]' --graph --date=short
+    pushall = !git remote | xargs -L1 git push --all
+    trackedls = ls-tree -r master --name-only
+[color]
+    ui = auto
+[push]
+    default = simple
+[core]
+    excludesfile = /home/anthony/.gitignore_global
+
