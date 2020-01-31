@@ -1,9 +1,9 @@
 [user]
     name = Anthony Vicente
     email = anthony@mvicente.com
-
+    signingKey = <SIGNING_KEY> // replace with signing key fingerprint
 [alias]
-    hist = log --pretty=format:'%h %ad | %s%d [%an]' --graph --date=short
+    hist = log --pretty=format:'%h %ad | %s%d [%an - %G? - %GS]' --graph --date=short
     pushall = !git remote | xargs -L1 git push --all
     trackedls = ls-tree -r master --name-only
 [color]
@@ -12,4 +12,5 @@
     default = simple
 [core]
     excludesfile = /home/anthony/.gitignore_global
-
+[commit]
+    gpgsign = true
