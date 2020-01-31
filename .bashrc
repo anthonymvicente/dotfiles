@@ -2,7 +2,7 @@
 # ~/.bashrc
 #
 
-. ~/.bash_aliases
+source ~/.bash_aliases
 
 [[ -f ~/.Xresources ]] && xrdb -merge -I$HOME ~/.Xresources
 
