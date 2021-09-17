@@ -7,13 +7,15 @@ Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
 
 " code completion
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+" Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 
 " easily surround in brackets
 Plug 'tpope/vim-surround'
 
 " autoclose quotes, brackets, braces, etc
 Plug 'jiangmiao/auto-pairs'
+
+Plug 'ajgrf/parchment'
 
 call plug#end()
 
@@ -46,29 +48,31 @@ if exists('$TMUX')
 endif
 
 " Use deoplete.
-let g:deoplete#enable_at_startup = 1
+" let g:deoplete#enable_at_startup = 1
 
 " \ + space to activate Goyo
 :nnoremap <leader><Space> :Goyo<CR>
 let g:limelight_conceal_ctermfg = 'gray'
 
 function! s:goyo_enter()
-    call deoplete#disable()
+    " call deoplete#disable()
     set wrap
     set noshowmode
     set noshowcmd
     set nolist
     set nocursorline
+    colorscheme parchment
     Limelight
 endfunction
 
 function! s:goyo_leave()
-    call deoplete#enable()
+    " call deoplete#enable()
     set nowrap
     set showmode
     set showcmd
     set list
     set cursorline
+    colorscheme default
     Limelight!
 endfunction
 
