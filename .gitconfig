@@ -1,7 +1,7 @@
 [user]
     name = Anthony Vicente
     email = anthony@mvicente.com
-    signingKey = <SIGNING_KEY> // replace with signing key fingerprint
+    signingKey = B5E9B128F8CBA90DD54A57A98B4CE6CDC2CE4BEE
 [alias]
     hist = log --pretty=format:'%h %ad | %s%d [%an - %G? - %GS]' --graph --date=short
     pushall = !git remote | xargs -L1 git push --all
@@ -14,3 +14,8 @@
     excludesfile = /home/anthony/.gitignore_global
 [commit]
     gpgsign = true
+[filter "lfs"]
+    clean = git-lfs clean -- %f
+    smudge = git-lfs smudge -- %f
+    process = git-lfs filter-process
+    required = true
